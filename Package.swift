@@ -14,9 +14,12 @@ let package = Package(
 	products: [
 
 		// Static/Dynamic QRCode libraries
-
 		.library(
 			name: "QRCode",
+			targets: ["QRCode"]
+		),
+		.library(
+			name: "QRCodeStatic",
 			type: .static,
 			targets: ["QRCode"]
 		),
@@ -27,13 +30,15 @@ let package = Package(
 		),
 
 		// watchOS convenience including the 3rd party generator
-
 		.library(
 			name: "QRCodeExternal",
+			targets: ["QRCode", "QRCodeExternal"]
+		),
+		.library(
+			name: "QRCodeExternalStatic",
 			type: .static,
 			targets: ["QRCode", "QRCodeExternal"]
 		),
-
 		.library(
 			name: "QRCodeExternalDynamic",
 			type: .dynamic,
